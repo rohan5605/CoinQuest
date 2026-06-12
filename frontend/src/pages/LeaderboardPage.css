@@ -1,0 +1,96 @@
+.leaderboard-page {}
+
+.my-rank-card {
+  background: var(--gradient);
+  border: none;
+  margin-bottom: 20px;
+}
+
+.my-rank-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 8px;
+}
+
+.my-rank-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.rank-num {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  color: white;
+}
+
+.rank-addr {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  font-family: monospace;
+}
+
+.you-tag {
+  background: white;
+  color: var(--primary);
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.rank-value {
+  margin-left: auto;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+}
+
+.lb-card { overflow: auto; }
+
+.rank-badge {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.rank-badge.top-rank {
+  font-size: 22px;
+}
+
+.addr-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.addr-text {
+  font-family: monospace;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.value-text {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.my-row td {
+  background: var(--primary-pale) !important;
+  font-weight: 600;
+}
+
+.text-muted { color: var(--text-muted); font-size: 13px; }
+
+.lb-loading { display: flex; flex-direction: column; gap: 8px; }
+
+.empty-state {
+  text-align: center;
+  padding: 48px;
+  color: var(--text-muted);
+}
+.empty-state span { font-size: 48px; display: block; margin-bottom: 12px; }

@@ -1,0 +1,198 @@
+.wallet-page {}
+
+.portfolio-hero {
+  background: var(--gradient);
+  border-radius: 24px;
+  padding: 36px;
+  text-align: center;
+  margin-bottom: 28px;
+  box-shadow: 0 8px 40px var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 300px; height: 300px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+}
+
+.portfolio-label-big {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 8px;
+}
+
+.portfolio-usd {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.portfolio-meta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+  color: rgba(255,255,255,0.85);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.wallet-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 20px;
+  align-items: start;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* Token grid */
+.token-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.token-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  transition: all 0.2s;
+}
+.token-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.custom-coin-card { border-color: var(--primary); background: var(--primary-pale); }
+
+.token-card-top {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 12px;
+}
+
+.token-icon-circle {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid;
+  flex-shrink: 0;
+}
+
+.tc-symbol { font-size: 15px; font-weight: 700; color: var(--text); }
+.tc-name { font-size: 11px; color: var(--text-muted); }
+.tc-balance { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.tc-usd { font-size: 14px; font-weight: 600; color: var(--primary); }
+.tc-price { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+/* Right panel */
+.wallet-right { display: flex; flex-direction: column; gap: 16px; }
+
+.add-balance-card {}
+.add-hint { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+
+.add-form { display: flex; flex-direction: column; gap: 16px; }
+
+.form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.coin-picker {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+
+.coin-pick-btn {
+  display: flex; align-items: center; gap: 5px;
+  padding: 6px 12px;
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 13px; font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text);
+}
+.coin-pick-btn:hover, .coin-pick-btn.active {
+  background: var(--primary-pale);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.add-input-row {
+  display: flex; gap: 8px;
+}
+
+.add-btn {
+  white-space: nowrap;
+  padding: 14px 20px;
+}
+
+.quick-amounts {
+  display: flex; gap: 8px;
+}
+
+.quick-btn {
+  flex: 1;
+  padding: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 13px; font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.quick-btn:hover { background: var(--primary-pale); border-color: var(--primary); }
+
+/* Transactions */
+.tx-list { display: flex; flex-direction: column; gap: 8px; }
+
+.tx-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  transition: background 0.2s;
+}
+.tx-row:hover { background: var(--primary-pale); }
+
+.tx-icon { font-size: 20px; flex-shrink: 0; }
+.tx-info { flex: 1; min-width: 0; }
+.tx-desc { font-size: 13px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tx-hash { font-size: 11px; color: var(--text-muted); font-family: monospace; }
+
+.empty-state {
+  text-align: center;
+  padding: 32px;
+  color: var(--text-muted);
+}
+.empty-state span { font-size: 36px; display: block; margin-bottom: 8px; }
+.empty-state p { font-size: 14px; }
+
+@media (max-width: 900px) {
+  .wallet-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CoinQuestWallet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Screen: Not Connected -->
+    <div id="screen-connect" class="screen active">
+      <div class="header">
+        <div class="logo-row">
+          <div class="logo-hex">⬡</div>
+          <span class="logo-text">CoinQuestWallet</span>
+        </div>
+        <p class="logo-sub">Connect your wallet to get started</p>
+      </div>
+      <div class="connect-body">
+        <div class="wallet-icon-big">🔗</div>
+        <h2>Connect Wallet</h2>
+        <p>Enter your wallet address to sync with CoinQuest</p>
+        <input type="text" id="connect-address" class="input" placeholder="0x... wallet address" />
+        <button id="btn-connect" class="btn-primary">Connect Wallet</button>
+        <div id="connect-error" class="error-msg hidden"></div>
+      </div>
+    </div>
+
+    <!-- Screen: Main Wallet -->
+    <div id="screen-main" class="screen">
+      <!-- Top bar -->
+      <div class="top-bar">
+        <div class="logo-row-sm">
+          <div class="logo-hex-sm">⬡</div>
+          <span class="logo-text-sm">CoinQuestWallet</span>
+        </div>
+        <div class="top-actions">
+          <div class="network-badge">🟢 Mainnet</div>
+          <button id="btn-refresh" class="icon-btn" title="Refresh">↻</button>
+          <button id="btn-disconnect" class="icon-btn danger" title="Disconnect">⏏</button>
+        </div>
+      </div>
+
+      <!-- Wallet Address -->
+      <div class="address-bar">
+        <div class="addr-dot"></div>
+        <span id="display-address" class="addr-text">0x0000...0000</span>
+        <button id="btn-copy" class="copy-btn" title="Copy address">⎘</button>
+      </div>
+
+      <!-- Portfolio Value -->
+      <div class="portfolio-card">
+        <div class="port-label">Total Portfolio Value</div>
+        <div id="portfolio-value" class="port-value">$0.00</div>
+        <div class="port-coins-count"><span id="coins-count">0</span> tokens</div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="assets">Assets</button>
+        <button class="tab-btn" data-tab="activity">Activity</button>
+        <button class="tab-btn" data-tab="pending">Pending <span id="pending-count" class="tab-badge hidden">0</span></button>
+      </div>
+
+      <!-- Tab: Assets -->
+      <div id="tab-assets" class="tab-content active">
+        <div id="assets-list" class="assets-list">
+          <div class="loading-row">Loading...</div>
+        </div>
+      </div>
+
+      <!-- Tab: Activity -->
+      <div id="tab-activity" class="tab-content">
+        <div id="activity-list" class="activity-list">
+          <div class="empty-state">No transactions yet</div>
+        </div>
+      </div>
+
+      <!-- Tab: Pending Transactions -->
+      <div id="tab-pending" class="tab-content">
+        <div id="pending-list" class="pending-list">
+          <div class="empty-state">No pending transactions</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen: Transaction Approve/Reject Modal -->
+    <div id="screen-tx" class="screen">
+      <div class="tx-header">
+        <div class="logo-hex">⬡</div>
+        <div>
+          <div class="logo-text">CoinQuestWallet</div>
+          <div class="tx-request-label">Transaction Request</div>
+        </div>
+      </div>
+
+      <div class="tx-site-row">
+        <span>🌐</span>
+        <div>
+          <div class="tx-site-url">localhost:3000 · CoinQuest</div>
+          <div class="tx-site-trust">✓ Trusted Site</div>
+        </div>
+      </div>
+
+      <div class="tx-type-chip">🔄 Swap Transaction</div>
+
+      <div class="tx-visual">
+        <div class="tv-coin">
+          <div id="tx-from-amount" class="tv-amount">0</div>
+          <div id="tx-from-coin" class="tv-coin-name">ETH</div>
+        </div>
+        <div class="tv-arrow">→</div>
+        <div class="tv-coin to">
+          <div id="tx-to-amount" class="tv-amount">0</div>
+          <div id="tx-to-coin" class="tv-coin-name">USDT</div>
+        </div>
+      </div>
+
+      <div class="tx-info-rows">
+        <div class="tx-info-row">
+          <span>Tx Hash</span>
+          <span id="tx-hash-display" class="mono">--</span>
+        </div>
+        <div class="tx-info-row">
+          <span>Gas Fee</span>
+          <span>~$0.50</span>
+        </div>
+        <div class="tx-info-row">
+          <span>Status</span>
+          <span class="badge-warn">Pending</span>
+        </div>
+      </div>
+
+      <div class="tx-warn-box">⚠️ Approve only if you initiated this swap on CoinQuest.</div>
+
+      <div class="tx-back-row">
+        <button id="btn-back" class="btn-back">← Back</button>
+      </div>
+      <div class="tx-btn-row">
+        <button id="btn-reject-tx" class="btn-reject">✕ Reject</button>
+        <button id="btn-approve-tx" class="btn-approve">✓ Approve</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
