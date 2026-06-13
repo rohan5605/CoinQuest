@@ -239,4 +239,4 @@ npm run dev
 
 ---
 
-**Made with ❤️ for College Project | CoinQuest MERN Stack**
+**College Project | CoinQuest MERN Stack**
